@@ -11,15 +11,12 @@ stages:
         deploy:
           steps:
           - checkout: self
-          - task: HelmDeploy@0
-            displayName: Helm Deploy app
+          - task: Kubernetes@1
+            displayName: 'Create a new namespace for the pull request'
             inputs:
-              connectionType: 'Kubernetes Service Connection'
               kubernetesServiceConnection: 'private connection'
-              namespace: 'dev'
-              command: upgrade
-              chartType: FilePath
-              chartPath: '/path/to/chart'
-              releaseName: 'release-name'
-              valueFile: '/path/to/value/file'
-              arguments: '--create-namespace'
+              command: apply
+              useConfigurationFile: true
+              inline: '{ "kind": "Namespace", "apiVersion": "v1", "metadata": { "name": "test" }}'
+              connectionType: 'Kubernetes Service Connection'
+              
