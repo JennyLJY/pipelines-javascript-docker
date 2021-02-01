@@ -18,5 +18,5 @@ stages:
               useConfigurationFile: true
               inline: '{ "kind": "Namespace", "apiVersion": "v1", "metadata": { "name": "test" }}'
               connectionType: 'Kubernetes Service Connection'
-              kubernetesServiceConnection: 'private connection'
+              kubernetesServiceEndpoint: 'private connection'
               
