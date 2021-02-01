@@ -16,7 +16,7 @@ stages:
             inputs:
               command: apply
               useConfigurationFile: true
-              inline: '{ "kind": "Namespace", "apiVersion": "v1", "metadata": { "name": "test" }}'
+              inline: '{ "kind": "Namespace", "apiVersion": "v1", "metadata": { "name": "abc" }}'
               connectionType: 'Kubernetes Service Connection'
               kubernetesServiceEndpoint: 'private connection'
               
