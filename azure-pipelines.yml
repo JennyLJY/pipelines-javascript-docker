@@ -5,7 +5,7 @@ stages:
   - deployment: deploy
     displayName: Deploy
     pool: self-hosted pool
-    environment: 'testAKS''
+    environment: 'testAKS'
     strategy:
       runOnce:
         deploy:
